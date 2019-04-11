@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "CSV/CSVParser.h"
+#include "CSVParser.h"
 
 int main(int argc, char** argv) {
 	if (argc > 1) {
@@ -17,9 +17,9 @@ int main(int argc, char** argv) {
 
 		CSVParser::ReadCSVFileOTF(argv[1], lambda, true);
 
-		std::cout << size << std::endl;
-
-		std::cin.get();
+		#ifdef WINDOWS
+			std::cin.get();
+		#endif
 
 		return 0;
 	}
